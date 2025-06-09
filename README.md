@@ -1,2 +1,0 @@
-# webgispendidikancililn
-PROJECT AKHIR WEBGIS
