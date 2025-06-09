@@ -1,0 +1,366 @@
+/* Font & Smooth UI */
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', sans-serif;
+    caret-color: transparent;
+}
+
+body { 
+    font-family: sans-serif; 
+    background-image: 
+    url('Asset/perpus3.jpg'); 
+    margin: 0; 
+    padding: 0; 
+} 
+
+
+/* Header */
+#navbar { 
+    background-color:transparent; 
+    /* Soft blue color without transparency */ 
+    background-image: url('asset/bg3.png'); 
+    color: #E8EBD2; 
+    padding: 20px 0; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 999; 
+    border-bottom: 2px solid transparent; 
+    font-family: 'Montserrat', sans-serif; 
+    transition: background-color 0.3s ease; 
+    /* Smooth transition for background color */ 
+} 
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px;
+    margin-right: 12px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: #524f44;
+    font-family: 'Comic Neue', cursive;
+}
+
+/* Nav */
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    color: #524f44;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ffe7c2;
+    color: #8b7235;
+}
+
+/* Hero Section */
+.hero-section {
+    margin-top: 80px;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(229, 207, 207);
+}
+
+.hero-content {
+    background-color: rgba(193, 171, 138, 0.5);
+    padding: 30px;
+    border-radius: 12px;
+    color: rgb(250, 250, 250);
+    max-width: 900px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Map */
+#map {
+    width: 95%;
+    height: 800px;
+    background-color: #d6b3b3;
+    margin: 40px auto;
+    border: 2px dashed #151514;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+#map-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: 'Comic Neue', cursive;
+    color: #f5f5f5;
+}
+
+/* ===== Gaya Dasar ===== */
+#data-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#data-section h2 {
+    text-align: center;
+    color: #0f0f0f;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#data-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #3498db;
+}
+
+/* ===== Grid Layout ===== */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+/* ===== Item Grafik ===== */
+.data-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+}
+
+.data-item h3 {
+    margin: 15px 15px 10px;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.data-item p {
+    margin: 0 15px 15px;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    flex-grow: 1;
+}
+
+/* ===== Container Grafik ===== */
+.chart-container {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.chart-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.data-item:hover .chart-image {
+    transform: scale(1.05);
+}
+
+/* ===== Tooltip ===== */
+.chart-tooltip {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.data-item:hover .chart-tooltip {
+    bottom: 0;
+}
+
+/* ===== Efek Tambahan ===== */
+.data-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.data-item:hover::before {
+    opacity: 1;
+}
+
+/* ===== Responsivitas ===== */
+@media (max-width: 768px) {
+    .data-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    
+    .chart-container {
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-container {
+        height: 180px;
+    }
+}
+/* Deskripsi */
+.description {
+    padding: 16px;
+    text-align: center;
+}
+
+.description h3 {
+    margin-top: 12px;
+    font-size: 1rem;
+    color: #3c2e21;
+    font-family: 'Comic Neue', cursive;
+}
+
+.description p {
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    margin-top: 8px;
+}
+
+
+/* Author Section */
+#author-section {
+    background-color: #f6e6c9;
+    padding: 50px 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+}
+
+.author-content {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.author-content h2,
+.author-name {
+    text-align: center;
+    font-family: 'Comic Neue', cursive;
+}
+
+.profile-picture {
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+#footer {
+    background-color: #e8d4a8;
+    color: #333;
+    text-align: center;
+    padding: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-content {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    .data-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .data-item {
+        width: 90%;
+    }
+}
